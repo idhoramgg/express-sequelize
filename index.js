@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const sequelize = require('./config/database')
 const app = express()
 const userRouter = require('./app/routes/user')
+const productRouter = require('./app/routes/product')
 
 const User = require('./app/models/user')
 const Product = require('./app/models/product')
@@ -33,5 +34,6 @@ sequelize
 
 app.get('/', (req, res)=> res.send('Hello peasant, with express and sequelize'))
 app.use('/', userRouter)
+app.use('/', productRouter)
 
 app.listen(port, () => console.log(`example app running on port ${port} !`))

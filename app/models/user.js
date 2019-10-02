@@ -24,8 +24,18 @@ const User = sequelize.define('user', {
   password: {
     type: Sequelize.STRING,
     allowNull: false,
+  },
+  createdAt: {
+    type: Sequelize.DATE,
+    defaultValue: new Date().toLocaleString()
+  },
+  updatedAt: {
+    type: Sequelize.DATE,
+    defaultValue: new Date().toLocaleString()
   }
-
+},
+{
+  timestamps: false
 });
 
 module.exports = User

@@ -12,7 +12,21 @@ const Product = sequelize.define('product', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
+  },
+  price: {
+    type: Sequelize.INTEGER,
+    allowNull:false,
+  },
+  createdAt: {
+    type: Sequelize.DATE,
+    defaultValue: new Date().toLocaleString()
+  },
+  updatedAt: {
+    type: Sequelize.DATE,
+    defaultValue: new Date().toLocaleString()
   }
+}, {
+  timestamps: false
 });
 
 module.exports = Product
